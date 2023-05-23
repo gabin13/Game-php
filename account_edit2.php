@@ -20,7 +20,7 @@
             $sth = $bdd->prepare($sql);
         
             $sth->execute([
-                'password'      => $_POST['password'],
+                'password'  => password_hash($_POST['password'], PASSWORD_DEFAULT),
                 'id'        => $_GET['id']
             ]);
 

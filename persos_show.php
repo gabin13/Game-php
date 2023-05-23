@@ -31,7 +31,7 @@
     <b>Force:</b> <?php echo $perso['for']; ?><br>
     <b>Vitesse:</b> <?php echo $perso['vit']; ?><br>
     <b>Intelligence:</b> <?php echo $perso['int']; ?><br>
-    <b>Points de vie:</b> <?php echo $perso['pdv']; ?><br>
+    <b>Points de vie:</b> <?php echo $perso['hp']; ?><br>
     <b>Dextérité:</b> <?php echo $perso['dex']; ?><br>
     <b>Charisme:</b> <?php echo $perso['char']; ?><br>  
 

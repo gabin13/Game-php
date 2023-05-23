@@ -47,7 +47,7 @@
                         <a href="account_del.php?id=<?php echo $user['id']; ?>" onClick="return confirm('Voulez vous vraiment supprimer ce compte ?');" class="btn-supp">Supprimer</a>
                     </td>
                 </tr>
-          
+    
     
         </tbody>
     </table><br><br>

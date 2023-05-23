@@ -134,14 +134,10 @@
 
     }?>
 
-<style>
-    body {
-        background-image: url(images\EWMkdiuXsAAdFfe.jpg);
-        background-size: cover;
-    }
-</style>
-
-
+<style> body{
+            background-image: url('images/EWMkdiuXsAAdFfe.jpg');
+            background-size: cover;</style>
+        }
 <?php require_once('_header.php'); ?>
     <div class="container">
         <div class="row mt-4">

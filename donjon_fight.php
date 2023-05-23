@@ -144,13 +144,10 @@
 
     ?>
 
-<style>
-    body {
-        background-image: url(images/Stage_Arena_tekken_7_-_sp%3Fcial.webp);
-        background-size: cover;
-    }
-</style>
-
+<style> body{
+            background-image: url('images/Stage_Arena_tekken_7_-_sp%253Fcial.webp');
+            background-size: cover;</style>
+        }
 <?php require_once('_header.php'); ?>
 
         <div 

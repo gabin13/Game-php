@@ -22,12 +22,10 @@
     $donjons = $sth->fetchAll();
 ?>
 
-<style>
-    body {
-        background-image: url(images\ombrecroc.jpg);
-        background-size: cover;
-    }
-    </style>
+<<style> body{
+            background-image: url('images/ombrecroc.jpg');
+            background-size: cover;</style>
+        }
 
 <?php require_once('_header.php'); ?>
     <div class="container">
