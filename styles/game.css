@@ -129,7 +129,6 @@ td{
 .container{
     width: 90%;
     margin: auto;
-    background-color: whitesmoke;
 }
 
 .table{
@@ -255,5 +254,26 @@ b{
 img {
     height: 100px;
     width: 100px;
+    
 }
+
+
+
+.game_over {
+    background-color: rgb(117, 4, 4);
+    color: white;
+    border: none;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    position: fixed;
+    left: 50%;
+    bottom: 250px;
+    transform: translate(-50%, -50%);
+
+}
+
 

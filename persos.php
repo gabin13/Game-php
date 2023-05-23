@@ -35,6 +35,13 @@
             <tr>
                 <td class="id">ID</td>
                 <td class="stats">Nom</td>
+                <td class="stats">Point de vie</td>
+                <td class="stats">Or</td>
+                <td class="stats">Force</td>
+                <td class="stats">Dextérité</td>
+                <td class="stats">Intelligence</td>
+                <td class="stats">Charisme</td>
+                <td class="stats">Vitesse</td>
                 <td class="stats">Action</td>
             </tr>
         </thead>
@@ -43,12 +50,41 @@
                 <tr>
                     <td class="id"><?php echo $perso['id']; ?></td>
                     <td class="stats"><?php echo $perso['name']; ?></td>
-                    <td>
-                        <a href="persos_choice.php?id=<?php echo $perso['id']; ?>" class="btn-det">Choisir</a>
-                        <a href="persos_show.php?id=<?php echo $perso['id']; ?>" class="btn-det">Détails</a>
-                        <a href="persos_edit.php?id=<?php echo $perso['id']; ?>" class="btn-modif">Modifier</a>
-                        <a href="persos_del.php?id=<?php echo $perso['id']; ?>" onClick="return confirm('Voulez vous vraiment supprimer ce personnage ?');" class="btn-supp">Supprimer</a>
-                    </td>
+                    <td class="stats"><?php echo $perso['hp']; ?></td>
+                    <td class="stats"><?php echo $perso['gold']; ?></td>
+                    <td class="stats"><?php echo $perso['for']; ?></td>
+                    <td class="stats"><?php echo $perso['dex']; ?></td>
+                    <td class="stats"><?php echo $perso['int']; ?></td>
+                    <td class="stats"><?php echo $perso['char']; ?></td>
+                    <td class="stats"><?php echo $perso['vit']; ?></td>
+                    <td align="right">
+                        <?php if ($perso['hp'] > 0) { ?>
+                            <a 
+                                class="btn-det"
+                                href="persos_choice.php?id=<?php echo $perso['id']; ?>" 
+                            >Choisir</a>
+                        <?php } else { ?>
+                            <a 
+                                class="btn-det"
+                                href="persos_respawn.php?id=<?php echo $perso['id']; ?>" 
+                            >Résussiter</a>
+                        <?php } ?>
+
+                        <a 
+                            class="btn-det"
+                            href="persos_show.php?id=<?php echo $perso['id']; ?>" 
+                        >Détails</a>
+
+                        <a 
+                            class="btn-modif"
+                            href="persos_edit.php?id=<?php echo $perso['id']; ?>" 
+                        >Modifier</a>
+
+                        <a 
+                            class="btn-supp"
+                            href="persos_del.php?id=<?php echo $perso['id']; ?>" 
+                            onClick="return confirm('Etes-vous sûr ?');"
+                        >Supprimer</a>
                 </tr>
             <?php } ?>
         </tbody>

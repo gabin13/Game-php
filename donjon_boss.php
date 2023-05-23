@@ -1,8 +1,6 @@
 <?php 
 
-    require_once('./classes/Gobelin.php');
-    require_once('./classes/Darkknight.php');
-    require_once('./classes/Barbarian.php');
+    require_once('./classes/Pekka.php');
 
     require_once('functions.php');
  
@@ -16,18 +14,11 @@
 
     if(!isset($_SESSION['fight']))
     {
-        $nb = random_int(0,100);
-
-        if ($nb <= 45) {
-            $ennemi = new Gobelin();
-        } else if ($nb >= 45 && $nb <= 85) {
-            $ennemi = new Barbarian();
-        }  else {
-            $ennemi = new DarkKnight();
-        }
+            $ennemi = new Pekka();
+        
 
         $_SESSION['fight']['ennemi'] = $ennemi;
-        $_SESSION['fight']['html'][] = "Vous tombez sur un ". $ennemi->name . '.';
+        $_SESSION['fight']['html'][] = "Vous tombez sur le ". $ennemi->name . '.';
     }
 
     if ($_SESSION['fight']['ennemi']->speed > $_SESSION['perso']['vit']) {
@@ -140,23 +131,19 @@
         unset($_SESSION['perso']);
         unset($_SESSION['fight']);
         header('Location: death.php');
-    }
 
-    ?>
+    }?>
 
 <style>
     body {
-        background-image: url(images/Stage_Arena_tekken_7_-_sp%3Fcial.webp);
+        background-image: url(images\EWMkdiuXsAAdFfe.jpg);
         background-size: cover;
     }
 </style>
 
-<?php require_once('_header.php'); ?>
 
-        <div 
-        class="container"
-        style="background-color: rgba(255, 255, 255, 0.4)"
-        >
+<?php require_once('_header.php'); ?>
+    <div class="container">
         <div class="row mt-4">
             <div class="px-4">
                 <?php require_once('_perso.php'); ?>
@@ -170,18 +157,14 @@
                     }
 
                 ?>
-                
                 <?php if ($_SESSION['fight']['ennemi']->hp > 0) { ?>
-                <p class= 'new'><a href="donjon_fight.php?id=<?php echo $_GET['id']; ?>">
+                <p class= 'new'><a href="donjon_boss.php?id=<?php echo $_GET['id']; ?>">
                 Attaquer
-                </a></p>
-                <p class= 'new'><a href="donjon_play.php?id=<?php echo $_GET['id']; ?>">
-                Fuir
                 </a></p>
 
                 <?php } else { ?>
-                    <p class="new"><a href="donjon_play.php?id=<?php echo $_GET['id']; ?>">
-                        Continuer l'exploration
+                    <p class="new"><a href="persos.php?id=<?php echo $_GET['id']; ?>">
+                        Fin du donjon
                     </a></p>
                 <?php } ?>
 

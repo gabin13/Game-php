@@ -31,8 +31,19 @@
     // $roomObject->name = "toto";
     ?>
 
+<style>
+    body {
+        background-image: url(images/<?php echo $roomObject->picture; ?>);
+        background-size: cover;
+        background-position: center;
+    }
+</style>
+
 <?php require_once('_header.php');?>
-    <div class="container">
+    <div 
+        class="container"
+        style="background-color: rgba(255, 255, 255, 0.4)"
+    >
         <div class="row mt-4">
             <div class="px-4">
                 <?php require_once('_perso.php'); ?>

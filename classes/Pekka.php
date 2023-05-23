@@ -7,9 +7,9 @@ class Pekka extends Ennemi
     public function __construct()
     {
         $this->image = "pekka";
-        $this->hp = 50;
+        $this->hp = 20;
         $this->name = "Pekka";
-        $this->power = 20;
+        $this->power = 12;
         $this->constitution = 20;
         $this->speed = 5;
         $this->xp = 100;

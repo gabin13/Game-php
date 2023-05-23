@@ -22,6 +22,13 @@
     $donjons = $sth->fetchAll();
 ?>
 
+<style>
+    body {
+        background-image: url(images\ombrecroc.jpg);
+        background-size: cover;
+    }
+    </style>
+
 <?php require_once('_header.php'); ?>
     <div class="container">
         <?php echo $_SESSION['perso']['name']; ?> (<a href="persos.php">Changer</a>)
