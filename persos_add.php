@@ -17,7 +17,7 @@
                 'name'   => $_POST['name'],
                 'for'    => 10,
                 'vit'    => 10,
-                'pdv'     => 50,
+                'hp'     => 50,
                 'dex'    => 10,
                 'int'   => 10,
                 'char'    => 10,
@@ -26,7 +26,7 @@
 
             if ($_POST['class'] == 1) {
                 $perso['for'] += 5;
-                $perso['pdv'] += 7;
+                $perso['hp'] += 7;
             }
     
             if ($_POST['class'] == 2) {
@@ -41,9 +41,11 @@
 
             $bdd = connect();
 
-            $sql = "INSERT INTO persos (`name`, `for`, `dex`, `int`, `char`, `vit`, `pdv`, `user_id`, `id_classes`) VALUES (:name, :for, :dex, :int, :char, :vit, :pdv, :user_id, :id_classes);";
-            
+            $sql = "INSERT INTO persos (`name`, `for`, `dex`, `int`, `char`, `vit`, `hp`, `user_id`, `id_classes`) VALUES (:name, :for, :dex, :int, :char, :vit, :hp, :user_id, :id_classes);";
+            echo $sql;
             $sth = $bdd->prepare($sql);
+
+            // dd($perso);
             
             $sth->execute([
                 'name'    => $perso['name'],
@@ -52,13 +54,14 @@
                 'char'    => $perso['char'],
                 'int'     => $perso['int'],
                 'vit'     => $perso['vit'],
-                'pdv'     => $perso['pdv'],
+                'hp'     => $perso['hp'],
                 'user_id' => $_SESSION['user']['id'],
                 'id_classes' => $perso['class']
             ]);
 
+
             //header('Location: persos.php');
-            header('Location: persos_show.php');
+            header('Location: persos.php');
         }
     }
 ?>
